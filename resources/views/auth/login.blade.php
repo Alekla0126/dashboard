@@ -63,7 +63,7 @@
             </div>
           </div>
           <div class="card-footer justify-content-center">
-            <button type="submit" class="btn btn-primary btn-link btn-lg">{{ __('!Inicia¡') }}</button>
+            <button type="submit" class="btn btn-primary btn-link btn-lg">{{ __('¡Inicia!') }}</button>
           </div>
         </div>
       </form>
