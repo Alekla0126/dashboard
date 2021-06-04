@@ -33,8 +33,6 @@
     Route::group(['middleware' => 'auth'], function ()
     {
 
-        Route::post('check_Temp', 'GaugeController@check_Temp');
-
         Route::get('table-list', function ()
         {
             return view('pages.table_list');
@@ -86,5 +84,6 @@
             'as' => 'profile.password',
             'uses' => 'App\Http\Controllers\ProfileController@password'
         ]);
+        Route::post('check_Temp', 'App\Http\Controllers\GaugeController@check_Temp');
     });
 
