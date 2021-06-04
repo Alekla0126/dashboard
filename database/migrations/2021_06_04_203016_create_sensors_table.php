@@ -14,7 +14,7 @@ class CreateSensorsTable extends Migration
     public function up()
     {
         Schema::create('sensors', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('temperature');
             $table->timestamps();
         });

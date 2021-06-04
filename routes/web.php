@@ -1,5 +1,6 @@
 <?php
 
+    use App\Models\Sensor;
     use Illuminate\Support\Facades\Storage;
     use Illuminate\Support\Facades\Route;
     use Illuminate\Http\Request;
@@ -29,6 +30,16 @@
     Auth::routes();
 
     Route::post('/storeTemp', 'SensorController@storeTemp')->name('storeTemp');
+    Route::get('sensor', function ()
+    {
+        return Sensor::all();
+    });
+    Route::put('sensor/{id}', function (Request $request, $id)
+    {
+        $sensor = Sensor::findOrFail($id);
+        $sensor->update($request->all());
+        return $sensor;
+    });
     Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
 
     Route::group(['middleware' => 'auth'], function ()
