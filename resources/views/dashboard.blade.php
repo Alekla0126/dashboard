@@ -33,7 +33,7 @@
                 }
             });
             $.ajax({
-                url: "{{ route('/checkTemp') }}",
+                url: "https://alekla.com/dashboard/checkTemp",
                 type: "POST",
                 data: {
                     'id': id,
