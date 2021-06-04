@@ -1,5 +1,3 @@
-<link href="{{ asset('/css/material-dashboard.css') }}" rel="stylesheet">
-
 @section('content')
 
     <div class="content">
