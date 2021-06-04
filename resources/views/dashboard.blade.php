@@ -4,12 +4,11 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <template>
-                        <vue-gauge :refid="'type-unique-id'"
-                                   :options="{'needleValue':85,'arcDelimiters':[10,36,78], 'hasNeedle':false]}">
-                        </vue-gauge>
-                    </template>
+                <div class="gauge">
+                    <div class="gauge__body">
+                        <div class="gauge__fill"></div>
+                        <div class="gauge__cover"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -25,10 +24,20 @@
         });
     </script>
     <script>
-        import VueGauge from 'vue-gauge';
-
-        export default {
-            components: {VueGauge},
+        const gaugeElement = document.querySelector(".gauge");
+        function setGaugeValue(gauge, value)
+        {
+            if (value < 0 || value > 1)
+            {
+                return;
+            }
+            gauge.querySelector(".gauge__fill").style.transform = `rotate(${
+                value / 2
+            }turn)`;
+            gauge.querySelector(".gauge__cover").textContent = `${Math.round(
+                value * 100
+            )}%`;
         }
+        setGaugeValue(gaugeElement, 0.3);
     </script>
 @endpush
