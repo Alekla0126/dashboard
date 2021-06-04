@@ -39,6 +39,6 @@
                 value * 100
             )}%`;
         }
-        setGaugeValue(gaugeElement, {{ $sensor->temperature }})
+        setGaugeValue(gaugeElement, {{ $sensor }})
     </script>
 @endpush
