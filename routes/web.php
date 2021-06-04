@@ -30,6 +30,8 @@
 
     Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
 
+    Route::post('/check-Temp', 'App\Http\Controllers\GaugeController@check_Temp')->name('check-Temp')->middleware('auth');
+
     Route::group(['middleware' => 'auth'], function ()
     {
 
@@ -84,6 +86,5 @@
             'as' => 'profile.password',
             'uses' => 'App\Http\Controllers\ProfileController@password'
         ]);
-        Route::post('check_Temp', 'App\Http\Controllers\GaugeController@check_Temp');
     });
 
