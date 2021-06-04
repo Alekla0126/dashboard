@@ -33,7 +33,7 @@
                 }
             });
             $.ajax({
-                url: "{{ route('dashboard/public/check_Temp') }}",
+                url: "{{ route('/check_Temp/') }}",
                 type: "POST",
                 data: {
                     'id': id,
