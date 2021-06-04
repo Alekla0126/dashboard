@@ -28,6 +28,7 @@
     ])->name('home');
     Auth::routes();
 
+    Route::post('/storeTemp', 'SensorController@storeTemp');
     Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
 
     Route::group(['middleware' => 'auth'], function ()

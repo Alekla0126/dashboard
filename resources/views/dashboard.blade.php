@@ -39,5 +39,6 @@
                 value * 100
             )}%`;
         }
+        setGaugeValue(gaugeElement, {{ $sensor }})
     </script>
 @endpush

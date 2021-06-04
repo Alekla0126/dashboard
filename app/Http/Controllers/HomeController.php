@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sensor;
+
 class HomeController extends Controller
 {
     /**
@@ -21,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $sensor = Sensor::all();
+        $sensor = $sensor->temperature;
+        return view('dashboard', compact('sensor'));
     }
 }
