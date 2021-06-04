@@ -33,7 +33,7 @@
     Route::group(['middleware' => 'auth'], function ()
     {
 
-        Route::post('check-Temp', 'GaugeController@check_Temp');
+        Route::post('check_Temp', 'GaugeController@check_Temp');
 
         Route::get('table-list', function ()
         {
