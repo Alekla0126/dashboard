@@ -1,16 +1,10 @@
 @extends('layouts.app', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
 
 @section('content')
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="gauge">
-                    <div class="gauge__body">
-                        <div class="gauge__fill"></div>
-                        <div class="gauge__cover"></div>
-                    </div>
-                </div>
-            </div>
+    <div class="gauge">
+        <div class="gauge__body">
+            <div class="gauge__fill"></div>
+            <div class="gauge__cover"></div>
         </div>
     </div>
 @endsection
