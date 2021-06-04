@@ -5,7 +5,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div id="gaugeArea"></div>
+                    <template>
+                        <vue-gauge :refid="'type-unique-id'"
+                                   :options="{'needleValue':85,'arcDelimiters':[10,36,78], 'hasNeedle':false]}">
+                        </vue-gauge>
+                    </template>
                 </div>
             </div>
         </div>
@@ -20,6 +24,11 @@
             md.initDashboardPageCharts();
         });
     </script>
-    <script src="https://unpkg.com/gauge-chart@latest/dist/bundle.js"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/gauge.js') }}"></script>
+    <script>
+        import VueGauge from 'vue-gauge';
+
+        export default {
+            components: {VueGauge},
+        }
+    </script>
 @endpush
