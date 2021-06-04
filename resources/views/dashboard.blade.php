@@ -25,27 +25,6 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        function getMessage()
-        {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                url: "https://alekla.com/dashboard/checkTemp",
-                type: "POST",
-                data: {
-                    'id': id,
-                    "_token": "{{ csrf_token() }}"
-                },
-                success: function (data)
-                {
-                    let value = data;
-                }
-            });
-            return value;
-        }
         const gaugeElement = document.querySelector(".gauge");
         function setGaugeValue(gauge, value)
         {
@@ -60,6 +39,5 @@
                 value * 100
             )}%`;
         }
-        setGaugeValue(gaugeElement, getMessage());
     </script>
 @endpush

@@ -9,6 +9,6 @@
         public function checkTemp(Request $request)
         {
             $post = $request->all();
-            return $post;
+            echo "<script>setGaugeValue(gaugeElement, $post);</script>";
         }
     }
