@@ -1,6 +1,7 @@
-@extends('layouts.app', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
+<link href="{{ asset('/css/material-dashboard.css') }}" rel="stylesheet">
 
 @section('content')
+
     <div class="content">
         <div class="container-fluid">
             <div class="gauge">
