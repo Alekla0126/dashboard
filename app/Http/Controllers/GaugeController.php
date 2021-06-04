@@ -6,7 +6,7 @@
 
     class GaugeController extends Controller
     {
-        public function check_Temp(Request $request)
+        public function checkTemp(Request $request)
         {
             $post = $request->all();
             return $post;

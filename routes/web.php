@@ -30,10 +30,9 @@
 
     Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
 
-    Route::post('/check-Temp', 'App\Http\Controllers\GaugeController@check_Temp')->name('check-Temp')->middleware('auth');
-
     Route::group(['middleware' => 'auth'], function ()
     {
+        Route::get('check-temp', ['uses' => 'GaugeController@checkTemp', 'as' => 'checkTemp']);
 
         Route::get('table-list', function ()
         {
