@@ -3,7 +3,11 @@
 @section('content')
     <div class="content">
         <div class="container-fluid">
-            <div id="gaugeArea"></div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div id="gaugeArea"></div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
@@ -16,21 +20,6 @@
             md.initDashboardPageCharts();
         });
     </script>
-    <script>
-        // Element inside which you want to see the chart
-        let element = document.querySelector('#gaugeArea')
-        // Properties of the gauge
-        let gaugeOptions = {
-            hasNeedle: true,
-            needleColor: 'gray',
-            needleUpdateSpeed: 1000,
-            arcColors: ['rgb(44, 151, 222)', 'lightgray'],
-            arcDelimiters: [30],
-            rangeLabel: ['0', '100'],
-            centralLabel: '50',
-        }
-        // Drawing and updating the chart
-        GaugeChart.gaugeChart(element, 300, gaugeOptions).updateNeedle(50)
-    </script>
     <script src="https://unpkg.com/gauge-chart@latest/dist/bundle.js"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/gauge.js') }}"></script>
 @endpush
