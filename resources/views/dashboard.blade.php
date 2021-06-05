@@ -1,6 +1,10 @@
 @extends('layouts.app', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
 
 @section('content')
+    <script>
+        let sensor = @json($sensor->temperature);
+        setGaugeValue(gaugeElement, sensor);
+    </script>
     <div class="content">
         <div class="container-fluid">
             <div class="row">
@@ -26,7 +30,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         const gaugeElement = document.querySelector(".gauge");
-        var array = JSON.parse('{{ json_encode($sensor) }}');
         function setGaugeValue(gauge, value)
         {
             if (value < 0 || value > 1)
@@ -40,6 +43,5 @@
                 value * 100
             )}%`;
         }
-        setGaugeValue(gaugeElement, temp[1])
     </script>
 @endpush
