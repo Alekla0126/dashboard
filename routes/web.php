@@ -30,14 +30,14 @@
     Auth::routes();
 
     Route::post('/storeTemp', 'SensorController@storeTemp')->name('storeTemp');
-    Route::get('sensor', function ()
+    Route::get('/sensor', function ()
     {
         return Sensor::all();
     });
     Route::put('sensor/{id}', function (Request $request, $id)
     {
         $sensor = Sensor::findOrFail($id);
-        $sensor->temperature = $request->temperature;
+        $sensor->update($request->all());
         return $sensor;
     });
     Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
