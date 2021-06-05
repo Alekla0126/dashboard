@@ -30,7 +30,7 @@
     Auth::routes();
 
     Route::post('/storeTemp', 'SensorController@storeTemp')->name('storeTemp');
-    Route::get('/sensor', function ()
+    Route::get('sensor', function ()
     {
         return Sensor::all();
     });
