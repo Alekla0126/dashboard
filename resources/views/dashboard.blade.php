@@ -40,6 +40,7 @@
                 value * 100
             )}%`;
         }
+        setGaugeValue(gaugeElement, .4);
         setGaugeValue(gaugeElement, temp);
     </script>
 @endpush
