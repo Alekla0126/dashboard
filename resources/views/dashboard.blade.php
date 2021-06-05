@@ -51,7 +51,8 @@
                     temp = data;
                 }
             });
+            return temp;
         }
-        setGaugeValue(gaugeElement, temp);
+        setGaugeValue(gaugeElement, getTemp());
     </script>
 @endpush
