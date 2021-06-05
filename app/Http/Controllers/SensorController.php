@@ -9,7 +9,12 @@
     {
         public function storeTemp(Request $request)
         {
-            return Sensor::create($request->all);
+            $sensor = new Sensor;
+            $sensor->temperature = $request->temperature;
+            $sensor->created_at = $request->created_at;
+            $sensor->updated_at = $request->updated_at;
+            $sensor->save();
+            return $sensor;
         }
 
     }

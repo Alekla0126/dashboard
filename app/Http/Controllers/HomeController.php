@@ -24,6 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         $sensor = Sensor::where('id', 1);
+        $sensor = $sensor->temperature;
         return view('dashboard', compact('sensor'));
     }
 }
