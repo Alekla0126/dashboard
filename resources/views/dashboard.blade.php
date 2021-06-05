@@ -27,6 +27,7 @@
     <script>
         const gaugeElement = document.querySelector(".gauge");
         let temp = @json($sensor->temperature ?? NULL);
+
         function setGaugeValue(gauge, value)
         {
             if (value < 0 || value > 1)
@@ -40,18 +41,16 @@
                 value * 100
             )}%`;
         }
-        function getTemp()
-        {
-            $.ajax({
-                type: 'POST',
-                url: 'https://alekla.com/dashboard/public/sensor',
-                data: '_token = <?php echo csrf_token() ?>',
-                success: function (data)
-                {
-                    temp = data;
-                    setGaugeValue(gaugeElement, temp);
-                }
-            });
-        }
+
+        $.ajax({
+            type: 'POST',
+            url: 'https://alekla.com/dashboard/public/sensor',
+            data: '_token = <?php echo csrf_token() ?>',
+            success: function (data)
+            {
+                temp = data;
+                setGaugeValue(gaugeElement, temp);
+            }
+        });
     </script>
 @endpush
