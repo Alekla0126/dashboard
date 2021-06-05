@@ -35,20 +35,6 @@
     {
         return Sensor::all();
     });
-    Route::put('update', function (Request $request)
-    {
-        $sensor = Sensor::findOrFail($request->id);
-        $sensor->temperature = $request->temperature;
-        $result = $sensor->save();
-        if($result)
-        {
-            return ['result'=> 'Se actualizo la temperatura'];
-        }
-        else
-        {
-            return ['result'=> 'Fallo la actualización de la temperatura'];
-        }
-    });
     Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
 
     Route::group(['middleware' => 'auth'], function ()
