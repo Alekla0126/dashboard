@@ -21,9 +21,9 @@
         'storeTemp'
     ]);
 
-    Route::get('sensor', function (Request $request)
+    Route::get('sensor', function ()
     {
-        return Sensor::find($request->id);
+        return Sensor::all();
     });
 
     Route::put('update', function (Request $request)
