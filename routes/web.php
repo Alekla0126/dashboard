@@ -23,7 +23,8 @@
 
     Route::get('sensor', function (Request $request)
     {
-        return Sensor::find($request->id);
+        $sensor = Sensor::find($request->id);
+        return $sensor->temperature;
     });
 
     Route::put('update', function (Request $request)
