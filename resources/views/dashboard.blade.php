@@ -27,7 +27,6 @@
     <script>
         const gaugeElement = document.querySelector(".gauge");
         let temp = @json($sensor->temperature ?? NULL);
-
         function setGaugeValue(gauge, value)
         {
             if (value < 0 || value > 1)
@@ -48,8 +47,8 @@
             data: '_token = <?php echo csrf_token() ?>',
             success: function (data)
             {
-                console.log(data);
-                setGaugeValue(gaugeElement, data);
+                let temp = JSON.parse(data);
+                setGaugeValue(gaugeElement, temp.temperature);
             }
         });
     </script>
