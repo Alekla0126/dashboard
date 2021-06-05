@@ -16,25 +16,16 @@
     | contains the "web" middleware group. Now create something great!
     |
     */
+    Route::post('storeTemp', [
+        SensorController::class,
+        'storeTemp'
+    ]);
 
-    Route::get('/', function ()
-    {
-        return view('welcome');
-    });
-
-    Auth::routes();
-
-    Route::get('/home', [
-        App\Http\Controllers\HomeController::class,
-        'index'
-    ])->name('home');
-    Auth::routes();
-
-    Route::post('storeTemp', [SensorController::class, 'storeTemp']);
     Route::get('sensor', function ()
     {
         return Sensor::all();
     });
+
     Route::put('update', function (Request $request)
     {
         $sensor = Sensor::findOrFail($request->id);
@@ -49,6 +40,20 @@
             return ['result' => 'Fallo la actualización de la temperatura'];
         }
     });
+
+    Route::get('/', function ()
+    {
+        return view('welcome');
+    });
+
+    Auth::routes();
+
+    Route::get('/home', [
+        App\Http\Controllers\HomeController::class,
+        'index'
+    ])->name('home');
+
+    Auth::routes();
 
     Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
 
