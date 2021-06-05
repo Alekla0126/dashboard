@@ -14,7 +14,14 @@
             $sensor->created_at = $request->created_at;
             $sensor->updated_at = $request->updated_at;
             $sensor->save();
-            return $sensor;
+            if($sensor)
+            {
+                return ['result' => 'Se realizo con éxito'];
+            }
+            else
+            {
+                return ['result' => 'No se puedo subir la información'];
+            }
         }
 
     }

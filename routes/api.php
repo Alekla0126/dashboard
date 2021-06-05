@@ -19,18 +19,3 @@
     {
         return $request->user();
     });
-
-    Route::put('/update', function (Request $request)
-    {
-        $sensor = Sensor::findOrFail($request->id);
-        $sensor->temperature = $request->temperature;
-        $result = $sensor->save();
-        if ($result)
-        {
-            return ['result' => 'Se actualizo la temperatura'];
-        }
-        else
-        {
-            return ['result' => 'Fallo la actualización de la temperatura'];
-        }
-    });
