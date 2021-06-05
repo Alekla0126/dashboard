@@ -7,7 +7,7 @@
 
     class Sensor extends Model
     {
-        protected $table = [
+        protected $guarded = [
             'temperature',
             'created_at',
             'updated_at',
