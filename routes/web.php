@@ -28,6 +28,8 @@
 
     Route::put('update', function (Request $request)
     {
+        $token = $request->session()->token();
+        $token = csrf_token();
         $sensor = Sensor::find($request->id);
         $sensor->temperature = $request->temperature;
         $result = $sensor->save();
