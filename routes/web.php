@@ -40,7 +40,14 @@
         $sensor = Sensor::findOrFail($id);
         $sensor->temperature = $request->temperature;
         $result = $sensor->save();
-        return $result;
+        if($result)
+        {
+            return ['result'=> 'Se actualizo la temperatura'];
+        }
+        else
+        {
+            return ['result'=> 'Fallo la actualización de la temperatura'];
+        }
     });
     Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
 
