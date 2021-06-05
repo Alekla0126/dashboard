@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $sensor = DB::table('sensors')::where('id', 1)->first();
-        return view('dashboard', array('sensor'));
+        $sensor = Sensor::where('id', 1)->first();
+        return view('dashboard', 'sensor');
     }
 }
