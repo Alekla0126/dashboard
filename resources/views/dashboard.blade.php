@@ -49,10 +49,9 @@
                 success: function (data)
                 {
                     temp = data;
+                    setGaugeValue(gaugeElement, temp);
                 }
             });
-            return temp;
         }
-        setGaugeValue(gaugeElement, getTemp());
     </script>
 @endpush
