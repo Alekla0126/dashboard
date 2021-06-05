@@ -26,7 +26,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         const gaugeElement = document.querySelector(".gauge");
-        let temp = @json($sensor->temperature ?? NULL);
         function setGaugeValue(gauge, value)
         {
             if (value < 0 || value > 1)
