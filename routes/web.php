@@ -34,9 +34,8 @@
     {
         return Sensor::all();
     });
-    Route::put('sensor/{id}', function (Request $request)
+    Route::put('sensor/{id}', function (Request $request, $id)
     {
-        $id = $request->id;
         $sensor = Sensor::findOrFail($id);
         $sensor->temperature = $request->temperature;
         $result = $sensor->save();
