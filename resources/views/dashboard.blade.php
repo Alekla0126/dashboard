@@ -48,8 +48,8 @@
             data: '_token = <?php echo csrf_token() ?>',
             success: function (data)
             {
-                temp = data;
-                setGaugeValue(gaugeElement, temp);
+                console.log(data);
+                setGaugeValue(gaugeElement, data);
             }
         });
     </script>
