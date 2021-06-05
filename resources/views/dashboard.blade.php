@@ -1,10 +1,6 @@
 @extends('layouts.app', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
 
 @section('content')
-    <script>
-        let sensor = @json($sensor->temperature);
-        setGaugeValue(gaugeElement, sensor);
-    </script>
     <div class="content">
         <div class="container-fluid">
             <div class="row">
@@ -17,6 +13,7 @@
             </div>
         </div>
     </div>
+    {{ $sensor->temperature }}
 @endsection
 
 @push('js')
