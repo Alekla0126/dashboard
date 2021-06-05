@@ -1,5 +1,6 @@
 <?php
 
+    use App\Http\Controllers\SensorController;
     use App\Models\Sensor;
     use Illuminate\Support\Facades\Storage;
     use Illuminate\Support\Facades\Route;
@@ -29,14 +30,14 @@
     ])->name('home');
     Auth::routes();
 
-    Route::post('/storeTemp', 'SensorController@storeTemp')->name('storeTemp');
+    Route::post('storeTemp', [SensorController::class, 'storeTemp']);
     Route::get('sensor', function ()
     {
         return Sensor::all();
     });
-    Route::put('sensor/{id}', function (Request $request, $id)
+    Route::put('update', function (Request $request)
     {
-        $sensor = Sensor::findOrFail($id);
+        $sensor = Sensor::findOrFail($request->id);
         $sensor->temperature = $request->temperature;
         $result = $sensor->save();
         if($result)
