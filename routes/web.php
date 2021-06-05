@@ -38,8 +38,9 @@
     {
         $id = $request->id;
         $sensor = Sensor::findOrFail($id);
-        $sensor->update($request->all());
-        return $sensor;
+        $sensor->temperature = $request->temperature;
+        $result = $sensor->save();
+        return $result;
     });
     Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
 
