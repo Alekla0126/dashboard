@@ -40,15 +40,18 @@
                 value * 100
             )}%`;
         }
-        $.ajax({
-            type: 'POST',
-            url: 'https://alekla.com/dashboard/public/sensor',
-            data: '_token = <?php echo csrf_token() ?>',
-            success: function (data)
-            {
-                let temp = data.temperature;
-                setGaugeValue(gaugeElement, temp);
-            }
-        });
+        function getTemp()
+        {
+            $.ajax({
+                type: 'POST',
+                url: 'https://alekla.com/dashboard/public/sensor',
+                data: '_token = <?php echo csrf_token() ?>',
+                success: function (data)
+                {
+                    temp = data;
+                }
+            });
+        }
+        setGaugeValue(gaugeElement, temp);
     </script>
 @endpush
