@@ -37,7 +37,7 @@
                 value / 2
             }turn)`;
             gauge.querySelector(".gauge__cover").textContent = `${Math.round(
-                value
+                value * 100
             )}%`;
         }
         setGaugeValue(gaugeElement, temp);
