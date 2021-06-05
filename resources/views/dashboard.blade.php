@@ -46,8 +46,7 @@
             data: '_token = <?php echo csrf_token() ?>',
             success: function (data)
             {
-                let temp = JSON.parse(data);
-                setGaugeValue(gaugeElement, temp.temperature);
+                setGaugeValue(gaugeElement, data.temperature);
             }
         });
     </script>
