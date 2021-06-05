@@ -40,7 +40,6 @@
                 value * 100
             )}%`;
         }
-
         $.ajax({
             type: 'POST',
             url: 'https://alekla.com/dashboard/public/sensor',
