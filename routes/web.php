@@ -34,9 +34,9 @@
     {
         return Sensor::all();
     });
-    Route::put('sensor/{id}', function (Request $request)
+    Route::put('sensor/{id}', function (Request $request, $id)
     {
-        $sensor = Sensor::findOrFail($request->id);
+        $sensor = Sensor::findOrFail($id);
         $sensor->update($request->all());
         return $sensor;
     });

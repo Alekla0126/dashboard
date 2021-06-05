@@ -40,7 +40,6 @@
                 value * 100
             )}%`;
         }
-        console.log(temp);
         setGaugeValue(gaugeElement, temp);
     </script>
 @endpush
