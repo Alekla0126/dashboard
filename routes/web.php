@@ -1,10 +1,10 @@
 <?php
 
     use App\Http\Controllers\SensorController;
-    use App\Models\Sensor;
     use Illuminate\Support\Facades\Storage;
     use Illuminate\Support\Facades\Route;
     use Illuminate\Http\Request;
+    use App\Models\Sensor;
 
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@
 
     Route::put('update', function (Request $request)
     {
-        $sensor = Sensor::findOrFail($request->id);
+        $sensor = Sensor::find($request->id);
         $sensor->temperature = $request->temperature;
         $result = $sensor->save();
         if ($result)
