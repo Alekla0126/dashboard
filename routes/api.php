@@ -20,7 +20,7 @@
         return $request->user();
     });
 
-    Route::put('update', function (Request $request)
+    Route::put('/update', function (Request $request)
     {
         $sensor = Sensor::findOrFail($request->id);
         $sensor->temperature = $request->temperature;
