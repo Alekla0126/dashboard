@@ -41,7 +41,7 @@
             )}%`;
         }
         $.ajax({
-            type: 'POST',
+            type: 'get',
             url: 'https://alekla.com/dashboard/public/sensor',
             data: '_token = <?php echo csrf_token() ?>',
             success: function (data)
