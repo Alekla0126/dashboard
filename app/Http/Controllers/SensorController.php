@@ -20,7 +20,7 @@
             }
             else
             {
-                return ['result' => 'No se puedo subir la información'];
+                return ['result' => 'No se pueden subir los datos'];
             }
         }
 
